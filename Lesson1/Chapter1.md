@@ -16,7 +16,7 @@ Decimal | Binary
 ``` 
 
 Each additional digit place for a binary bit adds an additional 2<sup>n</sup> digits, so:
-```py
+```
 Example:
 # bits can carry either 1 or 0
 1 bit = (0)
@@ -52,7 +52,16 @@ A boolean is a ``True`` or ``False`` value. You can imagine it as a bit in this 
 True: 1
 False: 0
 ```
+All data types require ``bytes`` to store the information they contain. The ``boolean`` data type requires ``24 bits`` at a minimum, as it is different dependent on hardware requirements. To declare a boolean, python uses the keywords: ``True`` and ``False``.
+> keyword: a word that have been defined by the programming language and have a signficant meaning/use
 
+
+To assign these to a variable, we must first declare a name for said variable followed by the equals sign shown below: 
+```pg
+# foo and bar are both variables
+foo = True
+bar = False
+```
 ## Integers
 
 
