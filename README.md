@@ -8,6 +8,7 @@ In this tutorial, I will mainly be focused on very basic computing theory needed
 4. Basics of Python
 
 # Agenda
+## Chapter 1: Variables and Operations
 1. Basic (Primitive) data types
     - Memory Allocation
     - Integers
@@ -21,6 +22,7 @@ In this tutorial, I will mainly be focused on very basic computing theory needed
 2. Operators
     - PEMDAS
     - Modulo
+## Chapter 2: Flow Controls
 3. Conditionals
     - If-else
         - Ternary operator
@@ -30,12 +32,10 @@ In this tutorial, I will mainly be focused on very basic computing theory needed
 4. Loops
     - While
     - For
+        - For range
         - For each
-5. Composite Data Types (Structures)
-    - Arrays
-    - Dictionaries
-    - Maps
-6. Functions, Classes, and Objects
+## Chapter 3: Functions
+5. Functions, Classes, and Objects
     - Scope
     - Functions
     - Classes
@@ -43,8 +43,31 @@ In this tutorial, I will mainly be focused on very basic computing theory needed
         - class functions
             - Regular
             - Static
-7. Further Study
-    - Projects
+## Chapter 4: Python Data Structures 
+6. Composite Data Types (Structures)
+    - Lists
+    - Dictionaries
+    - Tuples
+    - Slices
+    - Maps
+## Chapter 5: OOP
+8. Object Oriented Programming
+    - Encapsulation
+    - Polymorphism
+    - Inheritance
+
+## Chapter 6: Intro to Software Engineering
+9. Further Study
+    - Data Structures
+    - Sorting
+    - Algorithms
     - Memory Management
     - Other languages
-    
+10. Useful Packages
+    - Numpy
+    - Pandas
+    - Matplotlib
+    - Pillow
+    - Etc.
+
+
