@@ -1,5 +1,7 @@
+# What is Python?
+Python is a high level programming language that enables users to easily create software. Python focuses heavily on user readability, making it consistently one of the most preferred programming languages. It is commonly used in data science, image processing, machine learning, and many other applications. With hundreds of thousands different packages to develop applications along with its user friendly nature, it is a good entry point for aspiring programmers and computer scientists.
 # Installing Python
-Python can be installed through many different methods. Typically it is installed through the [Python website](https://www.python.org/). We will be working under the assumption you are using Python 3.0 or higher. Currently I am writing this while using 3.10.6. For the purposes of this tutorial, any version above 3.0 should be fine. 
+Python can be installed through many different methods. Typically it is installed through the [Python website](https://www.python.org/). For the purposes of this tutorial, we will be working under the assumption you are using Python 3.0 or higher. Currently I am writing this while using 3.10.6. 
 ## Windows:
 When installing it, make sure to install python for all users and add it to path. Adding Python to your paths will prevent future headache.
 ### Whoops!
