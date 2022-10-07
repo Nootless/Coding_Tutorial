@@ -26,6 +26,13 @@ You should be looking for a text editor or development environment to write your
 [Visual Studio Code](https://code.visualstudio.com/) is a very easy to use text editor which can function as a code development center. It allows for several different workspaces to be held on the side. Additionally, addons can help assist in the development process as well as make code look nicer. For the documentation for installing, it can be found [here](https://code.visualstudio.com/docs/python/python-tutorial). 
 
 # Hello, World!
-<p>One of the first projects (and the most exciting) is the 'Hello, World!' program. To start writing programs, you must have a new file that ends in the extension name ``.py`` to let the python interpreter to know it's a python file (as well as for yourself!).</p>
-To begin with, we are going to create a 
+One of the first projects (and the most exciting) is the Hello, World! program. To start writing programs, you must have a new file that ends in the extension name ``.py`` to let the python interpreter to know it's a python file (as well as for yourself!).
+
+To begin with, we are going to create a file named ``main.py``. Typically this is the entry of your program and which functions as the 'driver' of your program.
+
+```py
+if __name__ == '__main__':
+    print('Hello, World!')
+```
+While most of this might not be clear to a first time user, if ran this should output ``Hello, World!`` in the console. If there is any issues, please use google or directly ask me and I will post a running list of problems and solutions below.
 
