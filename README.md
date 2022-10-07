@@ -8,6 +8,7 @@ In this tutorial, I will mainly be focused on very basic computing theory needed
 4. Basics of Python
 
 # Agenda
+## Chapter 0: Installing Python
 ## Chapter 1: Variables and Operations
 1. Basic (Primitive) data types
     - Memory Allocation
