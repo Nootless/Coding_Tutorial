@@ -71,4 +71,7 @@ In this tutorial, I will mainly be focused on very basic computing theory needed
     - Pillow
     - Etc.
 
+## Tools
+[Python Style Guide](https://peps.python.org/pep-0008/)
+
 
