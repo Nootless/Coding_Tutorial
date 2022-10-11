@@ -224,6 +224,60 @@ int_value = int(integer_input_value)
 As you can see from above, there can be variables that have different types but seem to have the exact same inputs, notable in example 2. This is especially important when we move into the next section: operations. Issues with types can cause entire programs to fail.
 
 # 2. Operators
+
+``Operators`` are functions that are built into the Python language. Most of us use them on a daily basis. Monitoring your finances, using a calculator, and/or figuring out how long ago you ate: all of these are done using operators.
+
+```
+List of Basic Operators
++, addition
+-, subtraction (negative addition)
+*, multiplication
+/, division
+%, modulus
+**, exponent 
+```
+
+Below is an example of how all these operators are used. All of these are stored in a variable, however you do not have to store them in a variable. If I were to ``print(1+1)``, it would still print out 2. 
+
+```py
+add = 1 + 1 # 2
+subtract = 1 - 1 # 0
+mult = 2 * 3 # 6
+div = 3 / 3 # 1
+mod = 5 % 3 # 2
+expo = 2 ** 3 # 8
+```
+
+One operation that might be new to most people is the modulus operator. Dennoted with ``%``, it is used to get the <b>remainder</b> of the two. So think of it as a division where you use the remainder rather than discarding it. 
+
+## Bitwise Operations
+Bitwise operations is a fundemental part of computer science. While they are one of the fastest operations in any programming language, they are incredibly strange to work with when you first start. <b>DO NOT WORRY IF YOU DON'T UNDERSTAND THEM!</b> These are relatively complex operations that are rarely used by new and intermediate programmers. In this section I will be going to a binary representation of our numbers to make it easier to visualize.
+
+### Bitwise shifting
+``Bitwise shifting`` (bit shifting for short) is done by moving all binary bits by x amount, where x is the number input. There are two types of bit shifting operators: ``Left Shift`` and ``Right Shift``.
+
+```
+Left Shift: <<
+Right Shift: >>
+```
+```py
+Example:
+# Let us bitshift by 2 right and left on the number 6
+# 6(decimal) -> 110(binary)
+
+# Left Shift
+# 110 -> 11000 (binary)
+# 6 -> 24
+left_shift = 6 << 2
+
+# Right Shift
+# 110 -> 1 (binary)
+# 6 -> 1 (decimal)
+right_shift = 6 >> 2
+```
+As you might have noticed, when the binary bits are shifted to the left, the value increases while it decreases when shifted right. 
+
+In a decimal system, if we were to 'shift' our place by 2 left, we would increase by 100 times (10 -> 1000). This is the same if we were to 'shift' our place by 2 right, it would decrease it by 1/100 times (10 -> 0). The reason the value is lost instead of becoming a decimal is because the bit 'disappears'.  
 # Assignments
 ```py
 # Assignment 1: Variable Assigning
