@@ -36,5 +36,9 @@ To begin with, we are going to create a file named ``main.py``. Typically this i
 if __name__ == '__main__':
     print('Hello, World!')
 ```
-While most of this might not be clear to a first time user, if ran this should output ``Hello, World!`` in the console. If there is any issues, please use google or directly ask me and I will post a running list of problems and solutions below.
+While most of this might not be clear to a first time user, if ran this should output ``Hello, World!`` in the console. 
+
+You probably have noticed that the line ``print('Hello, World!')`` is indented by a tab. Unlike C-like programming languages, Python does not use ``{}`` brackets to indicate constructions, but rather by indentation. While this might not make sense right now, it is important to start thinking about how python structures its code.
+
+If there is any issues, please use google or directly ask me and I will post a running list of problems and solutions below.
 

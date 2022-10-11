@@ -10,9 +10,10 @@ In this tutorial, I will mainly be focused on very basic computing theory needed
 # Agenda
 ## Chapter 0: Installing Python
 ## Chapter 1: Primitives, Variables, and Operations
-
+- Memory Allocation
+- Commenting
+- Constants and Variables    
 1. Basic (Primitive) data types
-    - Memory Allocation
     - Booleans
     - Integers
     - Floating Point
@@ -21,12 +22,10 @@ In this tutorial, I will mainly be focused on very basic computing theory needed
         - strings
     - Void
     - Implicit vs. Explicit Casting
-    - How Python handles data types
 2. Operators
     - PEMDAS
         - Bitwise
     - Modulo
-- Commenting
 ## Chapter 2: Flow Controls
 3. Conditionals
     - If-else
