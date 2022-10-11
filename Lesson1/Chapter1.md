@@ -29,6 +29,7 @@ For 5 binary bits (0)(0)(0)(0)(0):
 
 The more commonly used unit is the [byte](https://en.wikipedia.org/wiki/Byte). You might have heard of these over bits, as ``bytes`` are used to measure how much space files take up on your storage. Bytes are made up of 8 bits, and can be used to represent 256 values. They also can be combined together similarly to bits, but must be in 2<sup>8</sup> increments.
 
+
 ```
 Example:
 1 bit = (0)
@@ -59,6 +60,7 @@ Usually it is not used as multiple one line comments are preferred. """
 While new programmers love to comment everything (I was there once), you should NOT comment on every line. Instead, comments should be used to explain harder lines of code and a general description of code blocks. 
 
 Another way to make your code more readable is having a consistent coding style and naming your variables properly.
+
 ### Naming Conventions
 Typically most people prefer to follow the [Python Style Guide](https://peps.python.org/pep-0008/), which is a set of standards of how to make code readable. While I highly suggest utlizing this as a tool so that your code is readable by other programmers, one of the core tenants is:
 
@@ -107,6 +109,8 @@ if __name__ == '__main__':
 if __name__ == '__main__':
     greeting = 'Hello, World!'
     print(greeting)
+
+# Would print same message
 ```
 
 Variables are important as they allow us to hold a specific ``state`` of something in the program and utilize them later on. 
@@ -115,9 +119,11 @@ Variables are important as they allow us to hold a specific ``state`` of somethi
 Constants, similar to their variable counterparts, do not have a specific declaration. Constants differ from variables as they do not change during the execution of the program. They are typically used to hold mathmatical constants like ``pi`` or ``e`` and program specific constants. The convention to declare a constant is all uppercase.
 ```py
 # Constant
-MY_NAME = 'Nootless'
+MY_FAVORITE_NUMBER = 1
 ``` 
 
+# 1. Data Structures
+Fundementally, a data structure is just a way of storing information, whether that be words, numbers, collections of data, and so on. In this section, we will be discussing the fundemental data structures, known commonly as ``Primitive Types``.
 ## Booleans
 A boolean is a ``True`` or ``False`` value. You can imagine it as a bit in this sense: 
 
@@ -125,6 +131,7 @@ A boolean is a ``True`` or ``False`` value. You can imagine it as a bit in this 
 True: 1
 False: 0
 ```
+
 All data types require ``bytes`` to store the information they contain. To declare a boolean, python uses the keywords: ``True`` and ``False``.
 > keyword: a word that have been defined by the programming language and have a signficant meaning/use
 
@@ -153,20 +160,70 @@ A [float](https://en.wikipedia.org/wiki/Floating-point_arithmetic) is an approxi
 ```py
 floating_point_value = 24.5
 ```   
-# Strings
-A [string](https://en.wikipedia.org/wiki/String_(computer_science) is a collection of characters, typically denoted as an alphabet. Python 3.0 supports [Unicode](https://en.wikipedia.org/wiki/Unicode) which is a standardization of representing characters.
+## Strings
+A [string](https://en.wikipedia.org/wiki/String_computer_science) is a collection of ``characters``, typically denoted as an alphabet. Python 3.0 supports [Unicode](https://en.wikipedia.org/wiki/Unicode), which is a standardization of representing characters. These are the words that make up the tutorial you have been reading. The unique part of Unicode is that it includes all of [ASCII](https://en.wikipedia.org/wiki/ASCII) (American Standard Code for Information Interchage), which is all characters on your keyboard, <b>AND</b> worldwide languages and symbols. 
 
+When declaring a string, it must be done inside single or double quotes. 
+```py
+my_name = 'Nootless'
+```
+
+Additionally, formatted strings can be used to create strings which are made up of a different variable and the string.
+```py
+my_name = 'Nootless'
+statement = f'My name is {my_name}'
+
+# statement 
+# My name is Nootless
+```
+### Characters
+A character is the base unit that makes a string. A character can be considered a string, but not all characters are strings. In other programming languages, a ``char`` (character) would be considered a separate data structure, but Python is built on strings. Therefore, character arithmetic will be omitted for this tutorial.
 ## Data Type Sizes
 The size of a data type is dependent on hardware. Below is a <b><u>MINIMUM</u></b> requirement for Python. 
 ```
 Data Type   | Size
 ===================
 Boolean     | 24
-Integer     |
-Float       |
-String      |
+Integer     | 24
+Float       | 24
+String      | Variable
  ```
 
+The size of strings are variable dependent on the length of the string. This can be tested using the main file provided in the test programs.
+
+## Void
+Void is more of an abstract idea than the previous few. It is used to represent the existence of nothing and typically can be used for error handling and initialize empty variables (covered more in scope section). In Python 3.0, the keyword ``None`` is used to denote a void type object. While typically not used at an entry level, it is important to know of its existence for bug fixing.
+
+## Implicit Type Casting vs. Explicit Type Casting
+So far we have been working with exclusively implicit type casted values, but what is type casting? 
+
+``Type Casting`` is how the data type of a variable is chosen. Integers being stored need to be of data type ``int``, strings need to be of type ``string`` and so on. What happens when there are issues with how Python interprets your data types or you need to change them explicity?
+
+That's where explicit type casting comes into play! Other languages (C, C++, Java, ...) utilize this by default, but for the sake of simplicity and readability, Python does not. Below is two examples of explicit type casting.
+
+```py
+# Example 1: basic integer casting
+var1 = 10
+var2 = 3.1 # I want this value to be an integer
+var2 = int(var2) # reassigns the integer version of var2 to var 2
+
+# var2 before reassignment -> 3.1 | type -> float
+# var2 after reassignment -> 3 | type -> int
+
+# Example 2: Reading in numbers
+
+# We will discuss this later, but just know that 
+# input_value takes in user input
+integer_input_value = input()
+int_value = int(integer_input_value)
+
+# User inputs: 3
+# integer_input_value -> '3' | type -> string
+# int_value -> 3 | type -> int
+```
+As you can see from above, there can be variables that have different types but seem to have the exact same inputs, notable in example 2. This is especially important when we move into the next section: operations. Issues with types can cause entire programs to fail.
+
+# 2. Operators
 # Assignments
 ```py
 # Assignment 1: Variable Assigning
