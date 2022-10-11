@@ -12,14 +12,15 @@ In this tutorial, I will mainly be focused on very basic computing theory needed
 ## Chapter 1: Primitives, Variables, and Operations
 - Memory Allocation
 - Commenting
-- Constants and Variables    
+- Variables and Constants   
 1. Basic (Primitive) data types
     - Booleans
     - Integers
     - Floating Point
         - Longs, Shorts
-    - characters
-        - strings
+    - strings
+        - characters
+    - Data Sizes
     - Void
     - Implicit vs. Explicit Casting
 2. Operators
