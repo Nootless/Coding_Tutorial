@@ -25,10 +25,12 @@ In this tutorial, I will mainly be focused on very basic computing theory needed
     - Implicit vs. Explicit Casting
 2. Operators
     - PEMDAS
-        - Bitwise
-    - Modulo
+    - Modulus
+    - Bitwise
 ## Chapter 2: Flow Controls
 3. Conditionals
+    - Conditional Logic
+        - DeMorgan's Law (Extra)
     - If-else
         - Ternary operator
     - Switch

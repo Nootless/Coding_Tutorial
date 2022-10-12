@@ -254,7 +254,7 @@ One operation that might be new to most people is the modulus operator. Dennoted
 Bitwise operations is a fundemental part of computer science. While they are one of the fastest operations in any programming language, they are incredibly strange to work with when you first start. <b>DO NOT WORRY IF YOU DON'T UNDERSTAND THEM!</b> These are relatively complex operations that are rarely used by new and intermediate programmers. In this section I will be going to a binary representation of our numbers to make it easier to visualize.
 
 ### Bitwise shifting
-``Bitwise shifting`` (bit shifting for short) is done by moving all binary bits by x amount, where x is the number input. There are two types of bit shifting operators: ``Left Shift`` and ``Right Shift``.
+``Bitwise shifting`` (bit shifting for short) is done by moving all binary bits by x amount, where x is the number input. Bit shifting is often used as a faster version of multiplicaiton and division. There are two types of bit shifting operators: ``Left Shift`` and ``Right Shift``.
 
 ```
 Left Shift: <<
@@ -277,12 +277,103 @@ right_shift = 6 >> 2
 ```
 As you might have noticed, when the binary bits are shifted to the left, the value increases while it decreases when shifted right. 
 
-In a decimal system, if we were to 'shift' our place by 2 left, we would increase by 100 times (10 -> 1000). This is the same if we were to 'shift' our place by 2 right, it would decrease it by 1/100 times (10 -> 0). The reason the value is lost instead of becoming a decimal is because the bit 'disappears'.  
+In a decimal system, if we were to 'shift' our place by 2 left, we would increase by 100 times (10 -> 1000). This is the same if we were to 'shift' our place by 2 right, it would decrease it by 1/100 times (10 -> 0). Since our system is entirely in binary (computer bits), when we shift we multiply and divide by 2 respectively. 
+> Bit shifting can be very useful when trying to work with powers of 2.
+
+However, the reason the value is lost instead of becoming a decimal is because the bit 'disappears'. Put another way, think about bits like a set of buckets: When the buckets are filled with water (@), and when they are empty (_):
+```
+\_/ \_/ \@/ \@/ Floor
+
+-> Dump water right by 1
+
+\_/ \_/ \_/ \@/ Floor
+```
+When the buckets have water, and you can freely dump water between each other. However, if you decide to dump water onto the floor with no bucket, the water will not be kept (but the floor will be all wet!). Keep in mind while shifting left will usually lead to higher numbers, it also has a similar issue of losing values if you shift beyond what Python is stores them as (24 bytes for int).
+
+
+### Bitwise Operators
+
+For the last part of this chapter we will be discussing bitwise functions. There are four total:
+```
+Operator | Symbol
+==================
+Bit AND  | &
+Bit OR   | |
+Bit NOT  | ~
+Bit XOR  | x ^ y
+```
+In this section I will showing the ``Truth Tables`` for ``AND``, ``OR``, ``NOT``, and ``XOR``. These are just ways of displaying what value you will get when doing the operation with which bits. ``NOT`` is a bit special since it is a ``unary`` operator, meaning it only uses a single value rather than two to perform operations
+
+Let X and Y be two bits being operated on ``X _ Y = __``
+```
+     X & Y
+      AND
+===============
+X   Y   | Value
+0   0   |   0
+0   1   |   0
+1   0   |   0
+1   1   |   1 
+-> AND returns a 1 if both bits are 1
+```
+```
+      X | Y
+       OR
+===============
+X   Y   | Value
+0   0   |   0
+0   1   |   1
+1   0   |   1
+1   1   |   1 
+-> OR returns a 1 if any bit has 1
+```
+```
+   ~X 
+   NOT
+============
+X   | Value
+0   |   1
+1   |   0 
+-> NOT returns the opposite of its input
+```
+```
+      X ^ Y
+       XOR
+===============
+X   Y   | Value
+0   0   |   0
+0   1   |   1
+1   0   |   1
+1   1   |   0 
+-> XOR returns a 1 if only one bit is 1
+```
+
+### Applications of Bitwise operators
+Previously we have discussed the uses for bit shifting but how can bit manipulation help us?
+
+> Storing booleans
+
+Since each bit can be thought of as a separate boolean value, you can easily store many dozens of boolean values inside one integer value. 
+
+Lets say that I have an integer `11001`. This is said to hold the boolean values for whether or not someone in the family has paid their taxes (beware the IRS). So from left to right we might have {Dad, Mom, Sister, Brother, Me}. If wanted to access my boolean value, all I would have to do is take the modulus 2 of the current integer.
+```
+11001 % 2 = 1 
+-> This represents `True`, meaning that I have paid my taxes :)
+```
+Let us say we wanted to make sure our brother does not get carted away for tax fraud. To perform this we need to bit shift right by 2, skipping over sister and me. Then taking the modulus.
+```
+11001 >> 2 = 00110
+00110 % 2 = 0
+-> This represents `False`, meaning that brother needs to pay up :(
+```
+
+This is a relatively simple example and often times booleans are not shifted this way to improve readability of code (at the cost of significantly more memory).
+There are other uses for bitwise operators, but these are outside the scope of this tutorial. If you do wish to learn more about bitwise manipulation, I would suggest a course more specifically in C, C++, and/or systems programming.
+
 # Assignments
 ```py
 # Assignment 1: Variable Assigning
 # Assignment 2: Type Casting
-
 ```
 
 

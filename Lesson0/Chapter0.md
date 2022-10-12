@@ -20,11 +20,12 @@ It can also be installed from the [Python website](https://www.python.org/).
 
 ## Recommended Software
 You should be looking for a text editor or development environment to write your code. While there are tools such as notepad, vim, and emacs to write code, I would highly recommend a software which has more functionality for beginners. 
-### Anaconda
-[Anaconda](https://www.anaconda.com/) is one of the best software for data science. However, overall it is a solid choice. It comes with section code runnning for easier debugging. To start with, you must install either jupeyter lab or jupyter notebook.
-### PyCharm
+> I personally recommend Visual Studio Code
+### Anaconda (Easiest to start working with)
+[Anaconda](https://www.anaconda.com/) is one of the best software for data science. However, overall it is a solid choice. It comes with section code runnning for easier debugging. To start with, you must install either jupeyter lab or jupyter notebook. 
+### PyCharm (Useful if only doing Python)
 [Pycharm](https://www.jetbrains.com/pycharm/) is also a solid choice for python development. This software is is simple to use and very powerful.
-### Visual Studio Code
+### Visual Studio Code (Most Versatile for other programming languages)
 [Visual Studio Code](https://code.visualstudio.com/) is a very easy to use text editor which can function as a code development center. It allows for several different workspaces to be held on the side. Additionally, addons can help assist in the development process as well as make code look nicer. For the documentation for installing, it can be found [here](https://code.visualstudio.com/docs/python/python-tutorial). 
 
 # Hello, World!
