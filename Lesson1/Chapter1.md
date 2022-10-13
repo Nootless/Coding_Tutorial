@@ -249,6 +249,28 @@ expo = 2 ** 3 # 8
 ```
 
 One operation that might be new to most people is the modulus operator. Dennoted with ``%``, it is used to get the **remainder** of the two. So think of it as a division where you use the remainder rather than discarding it. 
+## Float and Integer operations
+The difference between a float and an integer is its ``priority``. In terms of how we usually think about ints and floats is that they are the same thing but with different precisions. However, the compilers do not think that way. All integers are floats, but not all floats are integers (Integers are a subset of floats). For instance:
+```
+1 can be a floating point and an integer
+1.01 can be a floating point but not an integer
+```
+As a result, integers are therefore converted into floats whenever there is an operation involving both.
+```py
+1 + 1 = 2 # int + int = int
+1.0 + 1 = 2.0 # int + float = float
+1.0 + 1.0 = 2.0 # float + float = float
+```
+While this usually will not cause issues, keep in mind ``precision`` errors. 
+```py
+# Precision Error
+precision_err = 1.000001
+
+# Testing equality 
+1.000001 + 1 > 2 # Greater than 2 because of small fraction
+
+```
+In these cases, we need to round() or type cast the value into an ``integer``.
 
 ## Bitwise Operations
 Bitwise operations is a fundemental part of computer science. While they are one of the fastest operations in any programming language, they are incredibly strange to work with when you first start. **DO NOT WORRY IF YOU DON'T UNDERSTAND THEM!** These are relatively complex operations that are rarely used by new and intermediate programmers. In this section I will be going to a binary representation of our numbers to make it easier to visualize.
@@ -377,9 +399,11 @@ Question 1: How many bits would you need to represent 1000?
 Question 2: How many bytes would you need to represent 1000?
 
 Data Types
+Question 3: How would I add the value 10 to '10'?
+
+Question 4: How would I have Python interpret the number 15 as a floating point?
 
 Bitwise Operations
-
 ```
 
 # Answers
@@ -426,4 +450,9 @@ Similar to our previous answer, we need to think of how much can each byte repre
 
 It can be seen that it requires 2 bytes, even though it goes almost 6 bits over (16 - 10 = 6). Keep in mind that you want to take the ceiling (rounding up) of whatever your value is.
 
+Question 3:
+You must type cast int('10') or float('10') in order to make it into a form acceptable by the operator '+'.
+
+Question 4:
+I would change 15 to 15.0 as the '.0' would tell Python's interpreter that you want it to be a floating point value.
 ```
