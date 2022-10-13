@@ -161,7 +161,7 @@ A [float](https://en.wikipedia.org/wiki/Floating-point_arithmetic) is an approxi
 floating_point_value = 24.5
 ```   
 ## Strings
-A [string](https://en.wikipedia.org/wiki/String_computer_science) is a collection of ``characters``, typically denoted as an alphabet. Python 3.0 supports [Unicode](https://en.wikipedia.org/wiki/Unicode), which is a standardization of representing characters. These are the words that make up the tutorial you have been reading. The unique part of Unicode is that it includes all of [ASCII](https://en.wikipedia.org/wiki/ASCII) (American Standard Code for Information Interchage), which is all characters on your keyboard, <b>AND</b> worldwide languages and symbols. 
+A [string](https://en.wikipedia.org/wiki/String_computer_science) is a collection of ``characters``, typically denoted as an alphabet. Python 3.0 supports [Unicode](https://en.wikipedia.org/wiki/Unicode), which is a standardization of representing characters. These are the words that make up the tutorial you have been reading. The unique part of Unicode is that it includes all of [ASCII](https://en.wikipedia.org/wiki/ASCII) (American Standard Code for Information Interchage), which is all characters on your keyboard, **AND** worldwide languages and symbols. 
 
 When declaring a string, it must be done inside single or double quotes. 
 ```py
@@ -179,7 +179,7 @@ statement = f'My name is {my_name}'
 ### Characters
 A character is the base unit that makes a string. A character can be considered a string, but not all characters are strings. In other programming languages, a ``char`` (character) would be considered a separate data structure, but Python is built on strings. Therefore, character arithmetic will be omitted for this tutorial.
 ## Data Type Sizes
-The size of a data type is dependent on hardware. Below is a <b><u>MINIMUM</u></b> requirement for Python. 
+The size of a data type is dependent on hardware. Below is a **MINIMUM** requirement for Python. 
 ```
 Data Type   | Size
 ===================
@@ -248,10 +248,10 @@ mod = 5 % 3 # 2
 expo = 2 ** 3 # 8
 ```
 
-One operation that might be new to most people is the modulus operator. Dennoted with ``%``, it is used to get the <b>remainder</b> of the two. So think of it as a division where you use the remainder rather than discarding it. 
+One operation that might be new to most people is the modulus operator. Dennoted with ``%``, it is used to get the **remainder** of the two. So think of it as a division where you use the remainder rather than discarding it. 
 
 ## Bitwise Operations
-Bitwise operations is a fundemental part of computer science. While they are one of the fastest operations in any programming language, they are incredibly strange to work with when you first start. <b>DO NOT WORRY IF YOU DON'T UNDERSTAND THEM!</b> These are relatively complex operations that are rarely used by new and intermediate programmers. In this section I will be going to a binary representation of our numbers to make it easier to visualize.
+Bitwise operations is a fundemental part of computer science. While they are one of the fastest operations in any programming language, they are incredibly strange to work with when you first start. **DO NOT WORRY IF YOU DON'T UNDERSTAND THEM!** These are relatively complex operations that are rarely used by new and intermediate programmers. In this section I will be going to a binary representation of our numbers to make it easier to visualize.
 
 ### Bitwise shifting
 ``Bitwise shifting`` (bit shifting for short) is done by moving all binary bits by x amount, where x is the number input. Bit shifting is often used as a faster version of multiplicaiton and division. There are two types of bit shifting operators: ``Left Shift`` and ``Right Shift``.
@@ -282,11 +282,11 @@ In a decimal system, if we were to 'shift' our place by 2 left, we would increas
 
 However, the reason the value is lost instead of becoming a decimal is because the bit 'disappears'. Put another way, think about bits like a set of buckets: When the buckets are filled with water (@), and when they are empty (_):
 ```
-\_/ \_/ \@/ \@/ Floor
+Floor \_/ \_/ \@/ \@/ Floor
 
 -> Dump water right by 1
 
-\_/ \_/ \_/ \@/ Floor
+Floor \_/ \_/ \_/ \@/ Floor
 ```
 When the buckets have water, and you can freely dump water between each other. However, if you decide to dump water onto the floor with no bucket, the water will not be kept (but the floor will be all wet!). Keep in mind while shifting left will usually lead to higher numbers, it also has a similar issue of losing values if you shift beyond what Python is stores them as (24 bytes for int).
 
@@ -370,18 +370,16 @@ Let us say we wanted to make sure our brother does not get carted away for tax f
 This is a relatively simple example and often times booleans are not shifted this way to improve readability of code (at the cost of significantly more memory).
 There are other uses for bitwise operators, but these are outside the scope of this tutorial. If you do wish to learn more about bitwise manipulation, I would suggest a course more specifically in C, C++, and/or systems programming.
 
-# Assignments
-```py
-# Assignment 1: Variable Assigning
-# Assignment 2: Type Casting
-```
-
-
 # Questions
 ```
+Bits and Bobs
 Question 1: How many bits would you need to represent 1000?
-
 Question 2: How many bytes would you need to represent 1000?
+
+Data Types
+
+Bitwise Operations
+
 ```
 
 # Answers
@@ -389,10 +387,43 @@ Question 2: How many bytes would you need to represent 1000?
 Question 1:
 Answer: 10 bits
 2^10 = 1024
-Can represent up to 1024
+
+This is because when you have bits, they each can represent 2 numbers: 0,1. Each bit you add introduces: 
+
+2^n - 2^(n-1)
+
+where n is the number of bits added together.
+So to represent 1000, we need to use the logarithm. 
+
+log2(1000) = 9.96578...
+
+The use of a logarithm is not necessary, but it makes our lives much easier. The logarithm function is used to find the exponent for its base value (2).
+
+Alternatives: 
+Keep dividing by 2 until you get to 1, remove any decimals. 
+1000 / 2 = 500 -> 1
+500 / 2 = 250  -> 2
+250 / 2 = 125  -> 3
+125 / 2 = 67.5 -> 4
+67 /2 = 33.5   -> 5
+33 / 2 = 16.5  -> 6 
+16 / 2 = 8     -> 7
+8 / 2 = 4      -> 8
+4 / 2 = 2      -> 9
+2 / 2 = 1      -> 10
+
+While this works, it is much longer.
 
 Question 2:
 Answer: 2 bytes
 2^(8 + 8) = 2^16
 Can represent up to 65536
+
+Similar to our previous answer, we need to think of how much can each byte represent. As noted before, it takes 10 bits (2^10) to represent 1000. Recalling that a byte is a shorthand to represent 8 bits, we need to have ATLEAST 10 bits. In terms of multiples of 8:
+
+8 * 1 = 8 bits < 10 bits
+8 * 2 = 16 bits >= 10 bits
+
+It can be seen that it requires 2 bytes, even though it goes almost 6 bits over (16 - 10 = 6). Keep in mind that you want to take the ceiling (rounding up) of whatever your value is.
+
 ```
