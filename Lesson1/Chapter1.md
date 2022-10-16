@@ -38,6 +38,10 @@ For 3 bytes (00000000) (00000000) (00000000):
 2^(8 + 8 + 8) = 16777216
 ```
 
+```
+IMPORTANT
+Python counts starting from 0. This guide assumes you understand this fact moving forward.
+```
 While understanding bits and bytes is important, being able to interact and apply these concepts is crucial for programmers.
 
 ## Commenting and Code Style
@@ -400,7 +404,6 @@ Question 2: How many bytes would you need to represent 1000?
 
 Data Types
 Question 3: How would I add the value 10 to '10'?
-
 Question 4: How would I have Python interpret the number 15 as a floating point?
 
 Bitwise Operations
