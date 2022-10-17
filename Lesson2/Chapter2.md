@@ -115,6 +115,40 @@ else:
     print('I stayed at home!')
 ```
 The reason I said this was one of the most overused tools is because people will often continually chain `if-else` after `if-else`. Sometimes these are necessary, but other times they can be simplified. This comes down to experience and analyzing efficiency, which we will not be discussing in this course.
+## Short Circuiting
+`Short Circuiting` references the act of taking the path of least resistance. When your electronics 'short circuit', it means that there was something which caused a bypass over all the winds and turns that the electricity should have gone. This will cause the electronic to break, as the electricity goes at too high of a voltage and/or too high of a current where it should it not go yet.
+
+In programming, we look to take the path of least resistance to speed up performance, without breaking our stuff of course.
+
+Python's `and` and `or` are the short circuit operators. The way they work is:
+```
+and: evaluates the second term ONLY if the first term is True
+or: evaluates the second term ONLY if the first term is False
+``` 
+
+As you can see, the first term is crucially important to whether the second term is even evaluated. Therefore, if you were to know that a certain expression were to be MORE influential in the overall statement than the other, that one should go first.
+
+```
+and -> the influential term would be the term that returns False 
+or -> the influential term would be the term that returns True
+
+This is because the `and` term will terminate if the first term is `False`
+
+This is because the `or` term will terminate if the first term is `True`
+```
+
+While it does not necessarily matter at a small scale which term if the `if` statement goes first, it can save some time on a larger scale.
+
+```py
+# Short Circuit examples
+if False and True:
+    print('Not Reachable')
+else:
+    print('AND short circuit')
+    
+if True or False:
+    print('OR short circuit')
+```
 
 ### Ternary Operator
 The ternary operator is a special case of the `if else`. It is a conditional statement that is more condensed than the `if else`.
