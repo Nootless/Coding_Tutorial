@@ -134,10 +134,10 @@ print('x is larger' if x > y else 'y is larger')
 ```cpp
 // ... represents some action, whether that be print, calculating something, etc.
 // C++ implementation
-int case = 12;
+int variableName = 12;
 
 // input is == 12
-switch (case) {
+switch (variableName) {
     case 1: ... // if the input == 1
     case 2: ...
     case 3: ...
@@ -148,14 +148,14 @@ Python can use several methods to imitate this behavor, most commonly a `if-else
 ```py
 # python implementation
 # following example from above
-case = 12
+variable_name = 12
 
 # if else chain
-if case == 1:
+if variable_name == 1:
     ...
-elif case == 2:
+elif variable_name == 2:
     ...
-elif case == 3:
+elif variable_name == 3:
     ...
 else: # default case
     ...
@@ -219,15 +219,34 @@ values = [...]
 for variable in values:
     event
 ```
+**Range**
+
+To more clearly define the `range()` function, it generates a list of integers from 0 up to the value given. 
+
+n = number input
+
+list = 0, ... , n-1
+
+```
+Example:
+range(5) = [0, 1, 2, 3, 4]
+```
+
+This is what we call **inclusive** and **exclusive** for our values. If I were to say that it goes up to 5 inclusive, it would go:
+
+0, 1, 2, 3, 4, 5
+
+The range function itself is **inclusive** for its lower bound (0) and **exclusive** for its upper bound (n). This is important to understand when working with functions or formulas that other people devise, as it will be easier to work with them.
 
 ```py
 # Example:
-values = [2, 4, 6, 8]
 for x in range(4):
     print(x)
     # 0, 1, 2, 3
 
+values = [2, 4, 6, 8]
 for x in values:
     print(x)
     # 2, 4, 6, 8
 ```
+
