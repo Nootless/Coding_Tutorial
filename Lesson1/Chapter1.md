@@ -238,7 +238,9 @@ List of Basic Operators
 *, multiplication
 /, division
 %, modulus
-**, exponent 
+**, exponent
+=, assignment
+==, equivalent
 ```
 
 Below is an example of how all these operators are used. All of these are stored in a variable, however you do not have to store them in a variable. If I were to ``print(1+1)``, it would still print out 2. 
@@ -275,6 +277,23 @@ precision_err = 1.000001
 
 ```
 In these cases, we need to round() or type cast the value into an ``integer``.
+
+**Equivalent vs. Assignment**
+
+I think it is important to understand the difference between equivalence and assignment. In math class and math formulas, `=` is typically used to denote equivalence: `1 + 1 = 2`. However, in most programming languages, the `=` sign is used to denote `assignment`. Of course, you already know this, just more of a refresher. So what is the `==` signed used for? The `equivalence` operator is used to *test* for equality and returns a `True` or `False` value.
+
+```py
+# Example: Assignment
+x = 1 + 1
+print(x)
+# 2
+
+x = 1 + 1 == 2 
+print(x)
+# True
+```
+
+So to re-iterate, assignment gives a variable a specified value, while equivalence will return `True` or `False`.
 
 ## Bitwise Operations
 Bitwise operations is a fundemental part of computer science. While they are one of the fastest operations in any programming language, they are incredibly strange to work with when you first start. **DO NOT WORRY IF YOU DON'T UNDERSTAND THEM!** These are relatively complex operations that are rarely used by new and intermediate programmers. In this section I will be going to a binary representation of our numbers to make it easier to visualize.
@@ -396,6 +415,28 @@ Let us say we wanted to make sure our brother does not get carted away for tax f
 This is a relatively simple example and often times booleans are not shifted this way to improve readability of code (at the cost of significantly more memory).
 There are other uses for bitwise operators, but these are outside the scope of this tutorial. If you do wish to learn more about bitwise manipulation, I would suggest a course more specifically in C, C++, and/or systems programming.
 
+## Updated Order of Operations
+While PEMDAS still holds up for Python, there are several different types of expressions that have been introduced (and several others that have not) that do not fit into PEMDAS. [Here](https://docs.python.org/3/reference/expressions.html#operator-precedence) you can find the entire order of expression evaluation, but below I will show the most common.
+
+```
+Order of Evaluation (Highest First)
+()      | Parenthesis
+x[]     | Slicing
+**      | Exponent
+-x, ~x  | Negative and bitwise NOT
+*, /, % | Multiplication, Division, Modulus
++, -    | Addition, Subtraction
+<<, >>  | Bit shifting
+&       | Bitwise AND
+^       | Bitwise XOR
+|       | Bitwise OR
+>, ...  | comparison operators
+not     | Logical NOT
+and     | Logical AND
+or      | Logical OR
+lambda  | lambda
+=       | assignment
+```
 # Questions
 ```
 Bits and Bobs
