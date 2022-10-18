@@ -54,9 +54,53 @@ The discussion on *where* variables can be used and *where* they need to be decl
 
 Since programs are read from top down, you also can not define a variable *before* you use it. You probably already have realized this in previous examples, but this point is important to stress now that we are moving forward with harder topics. 
 
-
 # Functions
+Functions are one of the core tools used for recycling code along with `for` loops and `while` loops. It also allows you to encapsulate code in to a more readable format. You already have utilized several different functions without realizing it: `print()`, `input()`, and `__main__`. We are focusing more on *user-defined* functions in this chapter and will be discussing external functions later on.
+
+```cpp
+returnType functionName(dataType varName, dataType varName2) {
+    behavior
+    return ...
+} // functionName
+```
+```py
+# python
+def function_name(paramater_name, parameter_name2,...):
+    behavior
+    return ...
+```
+The above is how you define a function in Python and C++ for reference. Everything under the scope of a function must be indented by one indent. Every subsequent `if`, `for`, function, loop, or any thing that is under the scope of something else must have an indent.
+
+```py
+# Example:
+
+if __name__ == '__main__':
+    print('Hello')
+    for x in range(5):
+        if x == 0:
+            print('Hello! First print!')
+        print(f'Counting: {x}')
+```
+So this is a bit of a messy piece of code, but let us break it down step by step. Starting out, everything is under the scope of `main` in this program, meaning it must be indented by one to show it is 'contained' in `main`. Going further, the print is under the scope of `main`, as well as the `for` loop. Since `print` does not have anything underneath it, since it is just a function being called. Following this, underneath the `for` loop we have the `if` statement and the **third** overall print statement, not the second. Because there is no indent on the second print, it falls directly under the `for` loop. Lastly, under the `if` we have the second `print` statement. This will be broken down into a tree for simplicity.
+```
+Global Scope
+
+`- main function
+ |
+ `- print('Hello')
+ `- for x in range (5)
+  |
+  |`- if x == 0
+  | |
+  |  `- print('Hello! First print!')
+  |
+  `- print(f'counting: {x}')
+```
+Each branch
+
 ## Main function
+The main function, as previously defined, is the 'entry point' of the application. This means that this is where Python
+
 
 5. Functions, Classes, and Objects
     - Scope
