@@ -6,6 +6,5 @@ if __name__ == '__main__':
     # input(message)
     # used to take an input from the user
     
-    # should follow a similar order to this
-    print('First Number:')
-    input() 
+    # Test it out by running
+    some_variable = input('Some Text')

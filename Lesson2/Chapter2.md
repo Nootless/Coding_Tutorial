@@ -320,6 +320,10 @@ Operation (+,-,*,/): /
 3 / 4 = 0.75
 Continue?(y/n): n
 ```
+Example Console Output:
+
+![Alt text](photos/SampleOutput.png)
+
 This program should not terminate until the user inputs 'n' in the continue question. For this case, do not expect the user inputs anything except 'y' or 'n'.
 
 print(ouput) -> prints to screen whatever the 'ouput' variable is
