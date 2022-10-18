@@ -295,3 +295,33 @@ for x in values:
     # 2, 4, 6, 8
 ```
 
+# Project 1: Calculator
+Now that we have gone over some basics of moving numbers around, let us get started on the first project: a simple calculator!
+
+Do not get too scared by the concept: this one's application will be rather limited but will test your problem solving skills as well as understanding of programming. Everything you need will be in the past two chapters or will be provided for you. Please complete this before you move on to chapter 3! This will give an introduction to functions and teach you some basics on how to organize your programs. The solution will be labeled as 'solution.py' and the template code for you to use is labeled 'calulator.py'.
+
+Problem Statement:
+You are currently being held hostage by an engineering student (yikes!) who needs a calculator that is capable of computing for his next exam. It should be able to take in two numbers and what operation you wish to be done:
+```
+Present this to the user:
+==============================
+First Number: 
+Second Number:
+Operation (+,-,*,/):
+==============================
+number1 operation number2 = number3
+Continue? (y/n):
+
+Example Output:
+First Number: 3
+Second Number: 4
+Operation (+,-,*,/): /
+==============================
+3 / 4 = 0.75
+Continue?(y/n): n
+```
+This program should not terminate until the user inputs 'n' in the continue question. For this case, do not expect the user inputs anything except 'y' or 'n'.
+
+print(ouput) -> prints to screen whatever the 'ouput' variable is
+
+var = input(message) -> prompts the user with a 'message' and assigns the input from the user into the 'var'.
