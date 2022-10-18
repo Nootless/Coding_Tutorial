@@ -180,8 +180,31 @@ statement = f'My name is {my_name}'
 # statement 
 # My name is Nootless
 ```
+
 ### Characters
 A character is the base unit that makes a string. A character can be considered a string, but not all characters are strings. In other programming languages, a ``char`` (character) would be considered a separate data structure, but Python is built on strings. Therefore, character arithmetic will be omitted for this tutorial.
+
+### Escape Characters
+What happens when you want to print something like:
+```
+Chamberlin's famous phrase, "Peace for our Time"...
+```
+It will usually cause an error since you can't simply put things like " or / in strings without disrupting it. This is uniform across most programming language's compilers/interpreters (the programs the read and utilize your programs). To avoid these issues, programmers have made escape characters. Below is a list of common escape characters.
+```
+\'      | Single Quote
+\"      | Double Quotes
+\\      | Backslash
+\n      | New line
+\t      | tab
+\b      | backspace
+\r      | Carriage Return
+```
+To show how this is used in creating strings, we will take the original string and show how it's implemented.
+
+```py
+quote = "Chamberlin\'s famouse phrase, \"Peace for our Time\"..."
+```
+
 ## Data Type Sizes
 The size of a data type is dependent on hardware. Below is a **MINIMUM** requirement for Python. 
 ```
