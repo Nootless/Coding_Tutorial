@@ -60,7 +60,6 @@ if a > 1:
         print('a is in range!')
 ```
 This can be simplified using the `and` operation:
-
 ```py
 # Same as before
 a = 3
@@ -153,8 +152,20 @@ if True or False:
 ### Ternary Operator
 The ternary operator is a special case of the `if else`. It is a conditional statement that is more condensed than the `if else`.
 
+```cpp
+// C++ Ternary Operator
+#include <iostream>
+
+int main() {
+    int x = 5;
+    int y = 6;
+    std::cout << (x > y ? x : y) << " is greater." << std::endl; 
+} // main
+
+// prints: 6 is greater
+```
 ```py
-# Ternary
+# Python Ternary Operator
 # x = 5, y = 6
 x, y = 5, 6
 # ternary operation
