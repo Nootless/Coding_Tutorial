@@ -52,24 +52,7 @@ Everything is in the global scope box, but only local scope is in the local scop
 ```
 The discussion on *where* variables can be used and *where* they need to be declared is hard to visualize just in words, examples will make this much clearer. Do not worry! This is harder to grasp when you have not seen any actual code for it, so this chapter will have some coding examples to tie together the past 3 chapters now that you have some good background.
 
-Since programs are read from top down, you also can not define a variable *before* you use it. You probably already have realized this in previous examples, but this point is important to stress now that we are moving forward with harder topics. 
-
-# Functions
-Functions are one of the core tools used for recycling code along with `for` loops and `while` loops. It also allows you to encapsulate code in to a more readable format. You already have utilized several different functions without realizing it: `print()`, `input()`, and `__main__`. We are focusing more on *user-defined* functions in this chapter and will be discussing external functions later on.
-
-```cpp
-returnType functionName(dataType varName, dataType varName2) {
-    behavior
-    return ...
-} // functionName
-```
-```py
-# python
-def function_name(paramater_name, parameter_name2,...):
-    behavior
-    return ...
-```
-The above is how you define a function in Python and C++ for reference. Everything under the scope of a function must be indented by one indent. Every subsequent `if`, `for`, function, loop, or any thing that is under the scope of something else must have an indent.
+Since programs are read from top down, you also can not define a variable *before* you use it. You probably already have realized this in previous examples, but this point is important to stress now that we are moving forward with harder topics. Let us take of an example of scope:
 
 ```py
 # Example:
@@ -96,10 +79,65 @@ Global Scope
   |
   `- print(f'counting: {x}')
 ```
-Each branch
+
+# Functions
+Functions are one of the core tools used for recycling code along with `for` loops and `while` loops. It also allows you to encapsulate code in to a more readable format. You already have utilized several different functions without realizing it: `print()`, `input()`, and `__main__`. We are focusing more on *user-defined* functions in this chapter and will be discussing external functions later on.
+
+```cpp
+returnType functionName(dataType varName, dataType varName2) {
+    behavior
+    return ...
+} // functionName
+```
+```py
+# python
+def function_name(paramater_name, parameter_name2,...):
+    behavior
+    return ...
+```
+The above is how you define a function in Python and C++ for reference. Everything under the scope of a function must be indented by one indent. Every subsequent `if`, `for`, function, loop, or any thing that is under the scope of something else must have an indent. Let's see an example of how you might create a function for calculating for printing the results of a class average.
+
+```py
+# Things needed:
+# Sum function  
+# length function
+# average function
+
+
+# no return type needed unless you need to pass data along
+def sum_list(list):
+    sum = 0
+    for x in list:
+        sum = sum + x
+    return sum
+
+def length_list(list):
+    length = 0
+    for x in list:
+        length = length + 1
+    return length
+
+def class_average(list_of_scores):
+    sum_class = sum_list(list_of_scores)
+    length_list = len(list_of_scores)
+    print(f'The Class average = {sum_class / length_list}')
+
+```
 
 ## Main function
-The main function, as previously defined, is the 'entry point' of the application. This means that this is where Python
+The main function, as previously defined, is the 'entry point' of the application. This means that this is where programming languages looks for when it starts to interpret your program. It is kind of like a factory: you might be able to see everything that the building has to offer if walk around it, but you can't enter it until you enter said doorway. 
+
+**HOWEVER**, Python does not run this way. The Python interpreter instead reads from the first line to the last line. While it may not execute things that require initalization or calling (functions and classes), it will read through them. The ``main`` function's purpose is to designate a file as the place of execution. It represents what is known as [top-level code environment](https://docs.python.org/3/library/__main__.html). This is where all the imported modules are pooled together to run. For now, just understand that the file that contains `main` is the file that is ran, while others are used to assist it. We will discuss modules later on.
+
+
+```cpp
+// C++
+int main () { } // main
+```
+```py
+# Python
+if __name__ == '__main__':
+```
 
 
 5. Functions, Classes, and Objects
