@@ -84,7 +84,7 @@ Global Scope
 Functions are one of the core tools used for recycling code along with `for` loops and `while` loops. It also allows you to encapsulate code in to a more readable format. You already have utilized several different functions without realizing it: `print()`, `input()`, and `__main__`. We are focusing more on *user-defined* functions in this chapter and will be discussing external functions later on.
 
 ```cpp
-returnType functionName(dataType varName, dataType varName2) {
+returnType functionName(dataType varName, dataType varName2, ...) {
     behavior
     return ...
 } // functionName
@@ -97,6 +97,7 @@ def function_name(paramater_name, parameter_name2,...):
 ```
 The above is how you define a function in Python and C++ for reference. Everything under the scope of a function must be indented by one indent. Every subsequent `if`, `for`, function, loop, or any thing that is under the scope of something else must have an indent. Let's see an example of how you might create a function for calculating for printing the results of a class average.
 
+The `def` is used as a `keyword` to show that the following is a function.
 ```py
 # Things needed:
 # Sum function  
@@ -123,6 +124,17 @@ def class_average(list_of_scores):
     print(f'The Class average = {sum_class / length_list}')
 
 ```
+Of course, you could always just write all of this into one big code chunk, but it removes the *reusability* of the code. If I were to take the above code and combine it, the code would work but it would not be re-created every single time it is used.
+
+Now this code will not do anything because it is currently defined underneath a function. Much like how your system does not run everything all at once, these functions work to store the an `algorithm` (series of operations) to be `called` for further use. Below is an example of how to utilize the previous functions.
+
+```py
+# using above functions
+values = [90, 85, 27, 70, 66, 94, 88]
+class_average(values)
+
+```
+> The Class average = 74.28571428571429
 
 ## Main function
 The main function, as previously defined, is the 'entry point' of the application. This means that this is where programming languages looks for when it starts to interpret your program. It is kind of like a factory: you might be able to see everything that the building has to offer if walk around it, but you can't enter it until you enter said doorway. 
@@ -139,12 +151,84 @@ int main () { } // main
 if __name__ == '__main__':
 ```
 
+## Classes
 
-5. Functions, Classes, and Objects
-    - Scope
-    - Functions
-    - Classes
-        - Objects
-        - class functions
-            - Regular
-            - Static
+Now that we have gone over the basics of computation and code organization, let us define the most crucial building block of programs: classes. It is the fundemental `data structure` in `Object-Oriented Programming (OOP)`. In a broad sense, a `Class` is a structure used to hold data and perform operations. Classes hold the definition for what they do and what they store. Let us take a more concrete example:
+
+```py
+# Example layout
+class MyClass:
+    def __init__(self):
+        # things created at initiation of object 
+
+class Student:
+
+    def __init__(self,year,grade):
+        self.year = year
+        self.grade = grade
+    
+    def set_year(self,year):
+        self.year = year
+
+    def set_grade(self,grade):
+        self.grade = grade
+
+    def get_year(self):
+        return self.year
+
+    def get_grade(self):
+        return self.grade
+```
+
+Above is a layout for how classes are created. The class must be defined by the `class` keyword followed by the name and the `:`. Any functions attached to the class is known as a `member function`, referred to also as a `method`. While the `__init__(self):` is not needed, it is used to define things to be created when you create an `instance` (instantiation) of the class, known as an `object`. Inside each of these methods, there is also a `self` parameter being passed in. This can be though of as a reference to the object, as to how the `state` of the object is being altered based on what is being passed in.
+
+Classes are often one of the biggest hangup for new programmers, so do not worry too much about fully understanding them right away. The biggest take aways is that:
+
+1. Classes are templates for the Objects they create
+2. Classes use `__init__()` function to define what the Object will have when created
+3. Classes can have functions called methods attached to them which can work with the data they have stored inside of them.
+
+Let us examine how an Object would be created.
+
+```py
+# Creation of object from above function
+# Student class
+
+# This will create two objects that are being stored in john and bohn variables respectively.
+john = Student(4,95)
+bohn = Student(4,85)
+
+# You may notice that you do put any parameters for the 'self' parameter. 
+# This is because 'self' is used by the class when creating an object.
+
+# Since these are object of class 'Student', they get to use the methods that 'Student' has
+# john_grade = 95
+# bohn_grade = 85
+john_grade = john.grade
+bohn_grade = bohn.grade
+
+# another way of getting the grade can be done like this, which is done through methods:
+john_grade = john.get_grade()
+bohn_grade = bohn.get_grade()
+
+# The values can also be changed:
+# This will change the object's value
+john.grade = 55
+bohn.grade = 85
+```
+
+Classes can be thought of instructions on how to build something and what features they should include. Objects can be though of products created based on this template. A more realistic example might be something like a car. The car is a class which can have features like:
+- miles per gallon 
+- age
+- mileage
+- brand
+
+The 2022 Toyota Camry might be defined as:
+- 30 miles per gallon
+- 0 years old
+- 25 miles
+- Toyota
+
+Each car shares the common characteristics listed, but the object is what represents each unique car's attributes. 
+
+### Static functions
